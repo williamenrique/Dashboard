@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Dashboard Dark</title>
+		<link rel="shortcut icon" href="./src/images/favicon.ico">
+		<link rel="stylesheet" href="./src/css/style.css">
+	</head>
+
+	<body>
+		<header class="header-nav">
+			<div class="box-logo">
+				<div class="box-img">
+					<img src="./src/images/logo-1-dark.svg" alt="">
+				</div>
+				<span class="show">
+					<i class='bx bx-chevrons-left'></i>
+				</span>
+			</div>
+			<div class="box-notificacion">
+				<i class='bx bxs-bell'></i>
+			</div>
+		</header>
+
+		<div class="box-main">
+			<!-- navegacion lateral -->
+			<section class="section-nav">
+				<div class="head-nav">
+					<div class="img_user"></div>
+					<div class="info_user">
+						<h6 class="nameUser">william enrique</h6>
+						<h6 class="emailUSer">william21enrique@gmail.com</h6>
+					</div>
+				</div>
+				<nav class="nav">
+					<ul class="list">
+						<!-- item solo -->
+						<li class="list__item item_active">
+							<div class="list__button">
+								<i class='bx bx-home list_icon'></i>
+								<a href="./index.html" class="nav__link">Inicio</a>
+							</div>
+						</li>
+						<!-- desplegable -->
+						<li class="list__item list__item--click">
+							<div class="list__button button_click">
+								<i class='bx bx-key list_icon'></i>
+								<a href="#" class="nav__link">Autenticacion</a>
+								<i class='bx bx-chevron-right list__arrow'></i>
+							</div>
+							<!-- la lista que se desplegara -->
+
+							<ul class="list__show">
+								<li class="list__inside">
+									<i class='bx bx-radio-circle-marked'></i>
+									<a href="pages/login.html" target="_blank" class="nav__link nav__link--inside">Login</a>
+								</li>
+								<li class="list__inside">
+									<i class='bx bx-radio-circle-marked'></i>
+									<a href="pages/register.html" target="_blank" class="nav__link nav__link--inside">Register</a>
+								</li>
+								<li class="list__inside">
+									<i class='bx bx-radio-circle-marked'></i>
+									<a href="pages/forgotpass.html" target="_blank" class="nav__link nav__link--inside">Forgot
+										Password</a>
+								</li>
+
+							</ul>
+						</li>
+						<!-- desplegable -->
+						<li class="list__item list__item--click">
+							<div class="list__button button_click">
+								<i class='bx bx-bar-chart-square list_icon'></i>
+								<a href="#" class="nav__link">Pages</a>
+								<i class='bx bx-chevron-right list__arrow'></i>
+							</div>
+							<!-- la lista que se desplegara -->
+							<ul class="list__show">
+								<li class="list__inside">
+									<i class='bx bx-radio-circle-marked'></i>
+									<a href="pages/404.html" target="_blank" class="nav__link nav__link--inside">404</a>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</nav>
+				<div class="footer-nav">
+					<a href="pages/profile.html">
+						<i class='bx bx-user icon-active'></i>
+					</a>
+					<a href="#">
+						<i class='bx bx-cog'></i>
+					</a>
+					<a href="#">
+						<i class='bx bx-log-out'></i>
+					</a>
+					<span class="show_menu">
+						<i class='bx bx-chevrons-left show_menu'></i>
+					</span>
+				</div>
+			</section>
+			<!-- navegacion lateral end -->
+			<!-- contenido principal -->
+			<div class="main">
+				<div class="container">
+					<!-- card -->
+					<div class="box-card">
+						<div class="card clock">
+							<span class="box-icon">
+								<i class='bx bx-time-five'></i>
+							</span>
+							<h6 class="title-card time">Hora</h6>
+							<p class="text-card date">11 de mayo 2022</p>
+						</div>
+
+						<div class="card dollar">
+							<span class="box-icon ">
+								<i class='bx bx-dollar'></i>
+							</span>
+							<h6 class="title-card">Precio del dolar</h6>
+							<p class="text-card">4.65bs</p>
+						</div>
+
+						<div class="card bitcoin">
+							<span class="box-icon ">
+								<i class='bx bx-bitcoin'></i>
+							</span>
+							<h6 class="title-card">Bitcoin al dia</h6>
+							<p class="text-card">36.230$</p>
+						</div>
+
+					</div>
+					<!-- end box card -->
+					<span class="divider-dotted"></span>
+					<!-- breadcrumbs -->
+					<div class="breadcrumbs">
+						<h4>Cuenta</h4>
+						<span class="separate"></span>
+						<div class="breadcrumbs_ruta">
+							<a href="./index.html">
+								Inicio
+								<i class='bx bx-chevron-right'></i>
+							</a>
+							<a href="#">
+								Configuracion
+								<i class='bx bx-chevron-right'></i>
+							</a>
+							<span>
+								Cuenta
+							</span>
+						</div>
+					</div>
+					<!-- end breadcrumbs -->
+					<span class="divider-dotted"></span>
+					<!-- box-profile -->
+					<section class="box-profile">
+						<div class="container">
+							<h3 class="title-box">
+								Detalles de perfil
+							</h3>
+						</div>
+						<span class="divider"></span>
+						<div class="container">
+							<section class="box-info-user">
+								<div class="box-img-head">
+									<form class="formImg">
+										<input type="file" id="file" name="file" accept="image/*">
+										<div id="preview-images">
+											<span class="search">
+												<i class='bx bx-camera'></i>
+											</span>
+											<div class="thumbnail 0" data-id="0" style="background-image : url('./src/images/default.png')">
+											</div>
+										</div>
+										<div class="box-action">
+											<button class="btn">subir</button>
+											<span class="files">Tipos de archivos permitidos: png, jpg, jpeg.</span>
+										</div>
+									</form>
+								</div>
+								<!-- formulario datos usuario -->
+								<form class="formProfile">
+									<input type="hidden" id="txtIdUser" name="txtIdUser" value="">
+									<div class="row">
+										<div class="box-input">
+											<label for="txtNombre">nombres</label>
+											<input type="text" id="txtNombre" name="txtNombre">
+										</div>
+										<div class="box-input">
+											<label for="txtApellido">apellidos</label>
+											<input type="text" id="txtApellido" name="txtApellido">
+										</div>
+										<div class="box-input">
+											<label for="txtEmail">email</label>
+											<input type="text" id="txtEmail" name="txtEmail">
+										</div>
+										<div class="box-input">
+											<label for="txtCi">Identificacion</label>
+											<input type="text" id="txtCi" name="txtCi">
+										</div>
+									</div>
+									<div class="row">
+										<div class="box-input">
+											<label for="txtCodPostal">Cod Postal</label>
+											<input type="text" id="txtCodPostal" name="txtCodPostal">
+										</div>
+										<div class="box-input">
+											<label for="txtTelefono">Telefono</label>
+											<input type="text" name="txtTelefono" id="txtTelefono">
+										</div>
+										<div class="box-input">
+											<label for="txtEstado">Estado</label>
+											<select name="listEstado" id="listEstado">
+												<option value="0">Seleccione estado</option>
+											</select>
+										</div>
+										<div class="box-input">
+											<label for="txtCiudad">ciudad</label>
+											<input type="text" id="txtCiudad" name="txtCiudad">
+										</div>
+									</div>
+									<div class="row">
+										<div class="box-input">
+											<label for="txtDireccion">Direccion</label>
+											<input type="text" name="txtDireccion" id="txtDireccion">
+										</div>
+									</div>
+									<div class="row">
+										<div class="box-button">
+											<button class="btn btn-guardar">Guardar</button>
+											<button class="btn btn-reset">Desechar</button>
+										</div>
+									</div>
+								</form>
+								<!-- end formulario datos usuario -->
+							</section>
+						</div>
+					</section>
+					<!-- end box profile -->
+					<span class="divider-dotted"></span>
+					<!-- eliminar cuenta -->
+					<section class="deletCount">
+						<div class="container">
+							<h3 class="title-box">
+								Eliminar cuenta
+							</h3>
+						</div>
+						<span class="divider"></span>
+						<div class="container">
+							<section class="alert">
+								<span>¿Está seguro de que desea eliminar su cuenta?</span>
+								<span>Una vez que eliminas tu cuenta, no hay vuelta atrás. Por favor, esté seguro.</span>
+								<div class="box-check">
+									<input type="checkbox" name="confirmDel" id="confirmDel">
+									<label class="check" for="confirmDel">Confirmo la desactivación de mi cuenta</label>
+								</div>
+								<button class="btn btn-confirm">desactivar</button>
+							</section>
+						</div>
+					</section>
+					<!-- end delete cuenta -->
+					<span class="divider-dotted"></span>
+					<!-- tabla de contenido con despliegue -->
+					<section class="tableCount">
+						<div class="container">
+							<h3 class="title-box">Tabla de cuenta </h3>
+						</div>
+						<span class="divider"></span>
+						<div class="container">
+							<div class="headerTab row">
+								<div class="box-show">
+									<div class="box-input">
+										<span>Mostrar</span>
+										<select name="searchName" id="searchName">
+											<option value="10">10</option>
+											<option value="20">20</option>
+											<option value="30">30</option>
+											<option value="40">40</option>
+											<option value="50">50</option>
+										</select>
+										<span>Registros</span>
+									</div>
+								</div>
+								<div class="box-search">
+									<div class="box-input">
+										<label for="txtNombre">buscar</label>
+										<input type="text" id="txtNombre" name="txtNombre">
+									</div>
+								</div>
+							</div>
+							<div class="head-table">
+								<div class="box-plus"></div>
+								<div class="box-cod">Cod</div>
+								<div class="box-banco">Banco</div>
+								<div class="box-user">Usuario</div>
+								<div class="box-pass">Clave</div>
+							</div>
+							<div class="body-data">
+								<div class="data">
+									<div class="box-data">
+										<div class="head-data">
+											<div class="box-plus"><i class='bx bxs-plus-circle iconShow'></i></div>
+											<div class="box-cod">0102</div>
+											<div class="box-banco">Banco de Venezuela</div>
+											<div class="box-user">kami0214</div>
+											<div class="box-pass">0202*Feb</div>
+										</div>
+										<div class="box-cont">
+											<ul>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="box-data">
+										<div class="head-data">
+											<div class="box-plus"><i class='bx bxs-plus-circle iconShow'></i></div>
+											<div class="box-cod">0102</div>
+											<div class="box-banco">Banco de Venezuela</div>
+											<div class="box-user">kami0214</div>
+											<div class="box-pass">0202*Feb</div>
+										</div>
+										<div class="box-cont">
+											<ul>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 <a href="#" target="_blank">Respuesta 1con enlace</a>
+												</li>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 <span>Respuesta 1</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="box-data">
+										<div class="head-data">
+											<div class="box-plus"><i class='bx bxs-plus-circle iconShow'></i></div>
+											<div class="box-cod">0102</div>
+											<div class="box-banco">Banco de Venezuela</div>
+											<div class="box-user">kami0214</div>
+											<div class="box-pass">0202*Feb</div>
+										</div>
+										<div class="box-cont">
+											<ul>
+												<li>
+													Pregunta 1 :<span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 :<span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 :<span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 :<span>Respuesta 1</span>
+												</li>
+												<li>
+													Pregunta 1 :<span>Respuesta 1</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- end boxdata -->
+								<div class="box-pagination">
+									<ul class="pagination">
+										<li><a href="#" class="">1</a></li>
+										<li><a href="#" class="">2</a></li>
+										<li class="active"><a href="#" class="">3</a></li>
+										<li><a href="#" class="">4</a></li>
+									</ul>
+								</div>
+
+							</div>
+
+							<!-- <div class="acordeon">
+								<div class="bloque">
+									<div class="head-bloque">
+
+										<span class="ver">+</span>
+										<h2>Titular 2</h2>
+									</div>
+									<p class="contenido">
+										Esto es contenido 1
+									</p>
+								</div>
+								<div class="bloque">
+									<div class="head-bloque">
+
+										<span class="ver">+</span>
+										<h2>Titular 2</h2>
+									</div>
+									<p class="contenido">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, blanditiis. Optio ipsa temporibus
+										ad eaque
+										dignissimos assumenda, adipisci! Velit, accusantium, distinctio. Sapiente iste velit repudiandae
+										voluptatum,
+										pariatur autem officiis accusantium quaerat blanditiis, laborum totam fugit vero fugiat sed ut
+										magnam nobis quia
+										omnis nisi vitae. Quam aut a, autem est et voluptate ullam quidem recusandae veniam quis vel
+										possimus iste at
+										similique optio repudiandae molestias distinctio, iusto quae expedita qui amet ducimus laborum
+										quasi. Et id nihil
+										odio, ratione quidem inventore, obcaecati fuga qui tempora. Facilis molestiae pariatur cupiditate
+										consectetur id
+										quae ab architecto rerum, reiciendis soluta error blanditiis suscipit.
+									</p>
+								</div>
+							</div> -->
+							<div class="footer-table">
+
+							</div>
+						</div>
+					</section>
+					<!-- end tabla de contenido con despliegue -->
+					<span class="divider-dotted"></span>
+				</div>
+			</div>
+			<!-- end contenido principal -->
+		</div>
+
+		<script src="./src/js/main.js"></script>
+	</body>
+
+</html>

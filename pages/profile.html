@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Profile Dashboard</title>
+		<link rel="shortcut icon" href="../src/images/favicon.ico">
+		<link rel="stylesheet" href="../src/css/style.css">
+	</head>
+
+	<body>
+		<header class="header-nav">
+			<div class="box-logo">
+				<div class="box-img">
+					<img src="../src/images/logo-1-dark.svg" alt="">
+				</div>
+				<span class="show arrow">
+					<i class='bx bx-chevrons-left'></i>
+				</span>
+			</div>
+			<div class="box-notificacion">
+				<i class='bx bxs-bell'></i>
+			</div>
+		</header>
+
+		<!-- caja principal  -->
+		<div class="box-main">
+			<section class="section-nav">
+				<div class="head-nav">
+					<div class="img_user"></div>
+					<div class="info_user">
+						<h6 class="nameUser">william enrique</h6>
+						<h6 class="emailUSer">william21enrique@gmail.com</h6>
+					</div>
+				</div>
+				<nav class="nav">
+					<ul class="list">
+						<!-- item solo -->
+						<li class="list__item">
+							<div class="list__button">
+								<i class='bx bx-home list_icon'></i>
+								<a href="../index.html" class="nav__link">Inicio</a>
+							</div>
+						</li>
+						<!-- desplegable -->
+						<li class="list__item list__item--click">
+							<div class="list__button button_click">
+								<i class='bx bx-key list_icon'></i>
+								<a href="#" class="nav__link">Autenticacion</a>
+								<i class='bx bx-chevron-right list__arrow'></i>
+							</div>
+							<!-- la lista que se desplegara -->
+							<ul class="list__show">
+								<i class='bx bx-radio-circle-marked'></i>
+								<a href="#" class="nav__link nav__link--inside">Login</a>
+						</li>
+						<li class="list__inside">
+							<i class='bx bx-radio-circle-marked'></i>
+							<a href="#" class="nav__link nav__link--inside">Register</a>
+						</li>
+						<li class="list__inside">
+							<i class='bx bx-radio-circle-marked'></i>
+							<a href="#" class="nav__link nav__link--inside">Forgot Password</a>
+						</li>
+
+					</ul>
+					</li>
+					<!-- desplegable -->
+					<li class="list__item list__item--click">
+						<div class="list__button button_click">
+							<i class='bx bx-bar-chart-square list_icon'></i>
+							<a href="#" class="nav__link">Pages</a>
+							<i class='bx bx-chevron-right list__arrow'></i>
+						</div>
+						<!-- la lista que se desplegara -->
+						<ul class="list__show">
+							<li class="list__inside">
+								<i class='bx bx-radio-circle-marked'></i>
+								<a href="#" class="nav__link nav__link--inside">404</a>
+							</li>
+						</ul>
+					</li>
+
+					</ul>
+				</nav>
+				<div class="footer-nav">
+					<a href="./profile.html">
+						<i class='bx bx-user icon-active'></i>
+					</a>
+					<a href="#">
+						<i class='bx bx-cog'></i>
+					</a>
+					<a href="#">
+						<i class='bx bx-log-out'></i>
+					</a>
+					<span class="show_menu">
+						<i class='bx bx-chevrons-left show_menu'></i>
+					</span>
+				</div>
+			</section>
+			<!-- contenido principal -->
+			<main class="main">
+				<div class="box-content">
+					<div class="breadcrumbs">
+						<h4>Cuenta</h4>
+						<span class="separate"></span>
+						<div class="breadcrumbs_ruta">
+							<a href="../index.html">
+								Inicio
+								<i class='bx bx-chevron-right'></i>
+							</a>
+							<a href="#">
+								Configuracion
+								<i class='bx bx-chevron-right'></i>
+							</a>
+							<span>
+								Cuenta
+							</span>
+						</div>
+					</div>
+					<section class="box-profile">
+						<div class="container">
+							<h3 class="title-box">
+								Detalles de perfil
+							</h3>
+						</div>
+						<span class="divider"></span>
+						<div class="container">
+							<section class="box-info-user">
+								<div class="box-img-head">
+									<div class="box-img" style="background-image: url('../src/images/default.png')">
+										<!-- <img src="../src/images/default.png" alt=""> -->
+									</div>
+									<div class="box-action">
+										<button class="btn">subir</button>
+										<span class="files">Tipos de archivos permitidos: png, jpg, jpeg.</span>
+									</div>
+								</div>
+								<form class="formProfile">
+									<input type="hidden" id="txtIdUser" name="txtIdUser" value="">
+									<div class="box-input">
+										<label for="txtNombre">nombres</label>
+										<input type="text" id="txtNombre" name="txtNombre">
+									</div>
+									<div class="box-input">
+										<label for="txtApellido">apellidos</label>
+										<input type="text" id="txtApellido" name="txtApellido">
+									</div>
+									<div class="box-input box-control">
+										<div>
+											<label for="txtEmail">email</label>
+											<input type="text" id="txtEmail" name="txtEmail">
+										</div>
+										<div>
+											<label for="txtCi">Identificacion</label>
+											<input type="text" id="txtCi" name="txtCi">
+										</div>
+									</div>
+									<div class="box-input box-control">
+										<div class="">
+											<label for="txtCodPostal">Cod Postal</label>
+											<input type="text" id="txtCodPostal" name="txtCodPostal">
+										</div>
+										<div class="">
+											<label for="txtTelefono">Telefono</label>
+											<input type="text" name="txtTelefono" id="txtTelefono">
+										</div>
+									</div>
+									<div class="box-input box-control">
+										<div>
+											<label for="txtEstado">Estado</label>
+											<select name="listEstado" id="listEstado">
+												<option value="0">Seleccione estado</option>
+											</select>
+										</div>
+
+										<div class="">
+											<label for="txtCiudad">ciudad</label>
+											<input type="text" id="txtCiudad" name="txtCiudad">
+										</div>
+									</div>
+									<div class="box-input">
+										<label for="txtDireccion">Direccion</label>
+										<input type="text" name="txtDireccion" id="txtDireccion">
+									</div>
+								</form>
+								<div class="box-button">
+									<button class="btn btn-guardar">Guardar</button>
+									<button class="btn btn-reset">Desechar</button>
+								</div>
+							</section>
+						</div>
+					</section>
+					<!-- eliminar cuenta -->
+					<section class="deletCount">
+						<div class="container">
+							<h3 class="title-box">
+								Eliminar cuenta
+							</h3>
+						</div>
+						<span class="divider"></span>
+						<div class="container">
+							<section class="alert">
+								<span>¿Está seguro de que desea eliminar su cuenta?</span>
+								<span>Una vez que eliminas tu cuenta, no hay vuelta atrás. Por favor, esté seguro.</span>
+								<input type="checkbox" name="confirmDel" id="confirmDel">
+								<label for="confirmDel">Confirmo la desactivación de mi cuenta</label>
+								<button class="btn btn-confirm">desactivar</button>
+							</section>
+						</div>
+					</section>
+					<!--  -->
+				</div>
+			</main>
+		</div>
+
+		<script src="../src/js/main.js"></script>
+	</body>
+
+</html>
