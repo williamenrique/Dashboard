@@ -82,6 +82,7 @@ html{
 .container{
 	width: 95%;
 	margin: 0 auto;
+	padding: 2rem 0;
 	// border: 1px solid $white;
 }
 .row{
@@ -89,6 +90,11 @@ html{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px ,1fr));
 	gap: 20px;
+	margin-bottom: 20px;
+}
+.box{
+	background: $dark-color-ligth;
+	border-radius: $border-radius;
 	margin-bottom: 20px;
 }
 .my{
@@ -539,10 +545,10 @@ html{
 *********************************/
 // cabecera del formulario
 .box-profile{
-	background: $dark-color-ligth;
-	border-radius: $border-radius;
-	width: 100%;
-	margin-bottom: 20px;
+	// background: $dark-color-ligth;
+	// border-radius: $border-radius;
+	// width: 100%;
+	// margin-bottom: 20px;
 	.box-img-head{
 		.formImg{
 			display: flex;
@@ -606,7 +612,6 @@ html{
 		}
 	}
 }
-
 .box-button{
 	display: flex;
 	gap: 20px;
@@ -619,9 +624,6 @@ html{
 *configuracion de delete count*
 *********************************/
 .deletCount{
-	background: $dark-color-ligth;
-	border-radius: $border-radius;
-	margin-bottom: 20px;
 	.alert{
 		display: flex;
 		flex-direction: column;
