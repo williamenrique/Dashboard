@@ -110,6 +110,42 @@ html{
 	border: 2px dotted rgba($color : $white-light-color, $alpha: 0.26);
 	margin: 2rem 0;
 }
+.box-input{
+	width: 100%;
+	position: relative;
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	input[type=date],
+	textarea,
+	select{
+		width: 100%;
+		background: none;
+		color: $text-color;
+		border-radius: $border-radius;
+		border: 1px solid rgba($color : $text-color, $alpha: 0.16);
+		font-weight: 300;
+		padding: 8px 10px;
+	}
+	input[type=color]{
+		width: 100%;
+		border-radius: $border-radius;
+	}
+	label{
+		display: inline-block;
+		font-size: 12px;
+		margin-bottom: 5px;
+		text-transform: capitalize;
+	}
+	select{
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		padding: 8px 10px;
+		position: relative;
+	}
+}
+// check cuadrado 
 .box-check{
 	display: flex;
 	align-items: center;
@@ -183,35 +219,67 @@ html{
 		}
 	}
 }
-.box-input{
-	width: 100%;
+// check tipo suiche
+.content-input{
 	position: relative;
-	input[type=text],
-	input[type=email],
-	input[type=password],
-	input[type=date],
-	textarea,
-	select{
-		width: 100%;
-		background: none;
-		color: $text-color;
-		border-radius: $border-radius;
-		border: 1px solid rgba($color : $text-color, $alpha: 0.16);
-		font-weight: 300;
-		padding: 8px 10px;
-	}
-	input[type=color]{
-		width: 100%;
-		border-radius: $border-radius;
-	}
-	label{
-		display: inline-block;
-		font-size: 12px;
-		margin-bottom: 5px;
-		text-transform: capitalize;
-	}
-	select{
-		padding: 8px 10px;
+	margin-bottom: 30px;
+	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar         el elemento <i> en este espacio*/
+	cursor: pointer;
+	display: block;
+	input[type=checkbox]{
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		visibility: hidden;
+		position: absolute;
+		right: 0;
+		&+ i{
+			background: $white-light-color;
+			border:2px solid rgba(0,0,0,0.2);
+			position: absolute; 
+			left: 0;
+			top: 0;
+			width: 52px;
+			height: 30px;
+			border-radius: 15px;
+			transition: $transition;
+			&::before{
+				content: ''; /* No hay contenido */
+				width: 26px;
+				height: 26px;
+				background: $white;
+				border-radius: 50%;
+				position: absolute;
+				z-index: 1;
+				left: 0px;
+				top: 0px;
+				-webkit-box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+				box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+				transition: $transition;
+			}
+			&::after{
+				content: 'ON';
+				position: absolute;
+				font-size: 10px;
+				color: $white;
+				top: 6px;
+				left: 1px;
+				opacity: 0 /* Ocultamos este elemento */;
+				transition: all 0.25s ease 0.25s;
+			}
+		}
+		&:checked + i{
+			background: $success-color;
+			&::before{
+				left: 22px;
+				-webkit-box-shadow: -3px 0 3px 0 rgba(0,0,0,0.2);
+				box-shadow: 3px 0 -3px 0 rgba(0,0,0,0.2);
+				transition: $transition;
+			}
+			&::after{
+				opacity: 1;
+			}
+		}
 	}
 }
 /************************
