@@ -44,7 +44,6 @@ html {
 .container {
   width: 95%;
   margin: 0 auto;
-  border: 1px solid #fff;
 }
 
 .row {
@@ -53,6 +52,14 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   margin-bottom: 20px;
+}
+
+.my {
+  margin: 20px 0;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .divider-dotted {
@@ -153,6 +160,8 @@ html {
 .box-input input[type=text],
 .box-input input[type=email],
 .box-input input[type=password],
+.box-input input[type=date],
+.box-input input[type=color],
 .box-input textarea,
 .box-input select {
   width: 100%;
@@ -430,7 +439,6 @@ html {
 .main {
   position: absolute;
   top: 0px;
-  margin-top: 20px;
   width: 100%;
   overflow-y: auto;
   height: 100%;
@@ -506,6 +514,27 @@ html {
 .box-card .clock {
   background: #fff;
   color: #161D31;
+}
+
+/*********************************
+* calendario									 *
+*********************************/
+.box-calendar {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.box-calendar .calendar {
+  width: 100%;
+  height: 400px;
+}
+
+.box-calendar .box-formcalendar {
+  width: 400px;
+  border: 1px solid rgba(208, 210, 214, 0.2);
+  border-radius: 6px;
 }
 
 /*********************************

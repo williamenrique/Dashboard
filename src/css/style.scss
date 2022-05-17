@@ -82,7 +82,7 @@ html{
 .container{
 	width: 95%;
 	margin: 0 auto;
-	border: 1px solid $white;
+	// border: 1px solid $white;
 }
 .row{
 	width: 100%;
@@ -90,6 +90,12 @@ html{
 	grid-template-columns: repeat(auto-fit, minmax(150px ,1fr));
 	gap: 20px;
 	margin-bottom: 20px;
+}
+.my{
+	margin: 20px 0;
+}
+.text-center{
+	text-align: center;
 }
 .divider-dotted{
 	display: inline-block;
@@ -177,6 +183,8 @@ html{
 	input[type=text],
 	input[type=email],
 	input[type=password],
+	input[type=date],
+	input[type=color],
 	textarea,
 	select{
 		width: 100%;
@@ -407,7 +415,6 @@ html{
 .main{
 	position: absolute;
 	top: 0px;
-	margin-top: 20px;
 	width: 100%;
 	overflow-y: auto;
 	height: 100%;
@@ -453,6 +460,25 @@ html{
 		color: $dark-color;
 	}
 }
+/*********************************
+* calendario									 *
+*********************************/
+.box-calendar{
+	width: 100%;
+	display: flex;
+	gap: 20px;
+	margin-bottom: 20px;
+	.calendar{
+		width: 100%;
+		height: 400px;
+	}
+	.box-formcalendar{
+		width: 400px;
+		border: $border-bottom;
+		border-radius: $border-radius;
+	}
+}
+
 /*********************************
 * migas de pan									 *
 *********************************/

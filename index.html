@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Dashboard Dark</title>
 		<link rel="shortcut icon" href="./src/images/favicon.ico">
+		<link rel="stylesheet" href="./src/plugins/fullcalendar-5.11.0/main.min.css">
 		<link rel="stylesheet" href="./src/css/style.css">
 	</head>
 
@@ -105,8 +106,42 @@
 			</section>
 			<!-- navegacion lateral end -->
 			<!-- contenido principal -->
-			<div class="main">
+			<div class="main my">
 				<div class="container">
+					<div class="box-calendar">
+						<div class="calendar" id="calendar"></div>
+						<div class="box-formcalendar">
+							<form class="formCalendar">
+								<input type="text" name="idEvent" id="idEvent">
+								<div class="container">
+									<h3 class="title-box my text-center">
+										Agregar evento
+									</h3>
+									<div class="divider"></div>
+									<div class="row">
+										<div class="box-input">
+											<label for="txtTituloEvento">Titulo</label>
+											<input type="text" id="txtTituloEvento" name="txtTituloEvento">
+										</div>
+										<div class="box-input">
+											<label for="txtInicio">Inicio</label>
+											<input type="date" id="txtInicio" name="txtInicio">
+										</div>
+										<div class="box-input">
+											<label for="txtColor">Color</label>
+											<input type="color" id="txtColor" name="txtColor">
+										</div>
+									</div>
+									<div class="row">
+										<div class="box-button">
+											<button class="btn btn-guardar" type="submit">Guardar</button>
+											<button class="btn btn-reset" type="reset">Desechar</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 					<!-- card -->
 					<div class="box-card">
 						<div class="card clock">
@@ -117,7 +152,7 @@
 							<p class="text-card date">11 de mayo 2022</p>
 						</div>
 
-						<div class="card dollar">
+						<div class="card dollar" id=''>
 							<span class="box-icon ">
 								<i class='bx bx-dollar'></i>
 							</span>
@@ -177,7 +212,7 @@
 											</div>
 										</div>
 										<div class="box-action">
-											<button class="btn">subir</button>
+											<button class="btn btnUpImg">subir</button>
 											<span class="files">Tipos de archivos permitidos: png, jpg, jpeg.</span>
 										</div>
 									</form>
@@ -446,7 +481,15 @@
 			<!-- end contenido principal -->
 		</div>
 
+		<script src="./src/plugins/jquery/jquery-3.6.0.min.js"></script>
+		<!-- <script src="./src/plugins/fullcalendar-5.11.0/es.js"></script> -->
+		<script src="./src/plugins/fullcalendar-5.11.0/main.min.js"></script>
+		<script src="./src/plugins/moment/moment.js"></script>
+		<script src="./src/plugins/sweetalert/sweetalert2@11.js"></script>
 		<script src="./src/js/main.js"></script>
+		<script src="./src/js/contOculto.js"></script>
+		<script src="./src/js/subirImg.js"></script>
+		<script src="./src/js/calendar.js"></script>
 	</body>
 
 </html>
