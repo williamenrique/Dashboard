@@ -29,7 +29,7 @@ html {
 .btn {
   background: #6f6df4;
   color: #fff;
-  padding: 8px 12px;
+  padding: 8px;
   text-align: center;
   max-width: 120px;
   border-radius: 6px;
@@ -161,7 +161,6 @@ html {
 .box-input input[type=email],
 .box-input input[type=password],
 .box-input input[type=date],
-.box-input input[type=color],
 .box-input textarea,
 .box-input select {
   width: 100%;
@@ -170,10 +169,12 @@ html {
   border-radius: 6px;
   border: 1px solid rgba(182, 185, 200, 0.16);
   font-weight: 300;
+  padding: 8px 10px;
 }
 
-.box-input input {
-  padding: 8px 10px;
+.box-input input[type=color] {
+  width: 100%;
+  border-radius: 6px;
 }
 
 .box-input label {
@@ -535,6 +536,22 @@ html {
   width: 400px;
   border: 1px solid rgba(208, 210, 214, 0.2);
   border-radius: 6px;
+}
+
+.box-calendar .box-button {
+  justify-content: space-around;
+  gap: 0;
+}
+
+.box-calendar .box-button .btn {
+  padding: 8px;
+}
+
+.box-calendar .btn-delete {
+  display: none;
+  background: #DA0806;
+  color: #fff;
+  border: none;
 }
 
 /*********************************
@@ -917,5 +934,37 @@ html {
     left: 0;
     width: 100%;
   }
+}
+
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
+}
+
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+  background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+  background-color: #87adbd !important;
+}
+
+.colored-toast .swal2-title {
+  color: white;
+}
+
+.colored-toast .swal2-close {
+  color: white;
+}
+
+.colored-toast .swal2-html-container {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

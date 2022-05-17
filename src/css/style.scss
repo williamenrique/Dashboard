@@ -69,7 +69,7 @@ html{
 .btn{
 	background: $primary-color;
 	color: $white;
-	padding: 8px 12px;
+	padding: 8px ;
 	text-align: center;
 	max-width: 120px;
 	border-radius: $border-radius;
@@ -184,7 +184,6 @@ html{
 	input[type=email],
 	input[type=password],
 	input[type=date],
-	input[type=color],
 	textarea,
 	select{
 		width: 100%;
@@ -193,9 +192,11 @@ html{
 		border-radius: $border-radius;
 		border: 1px solid rgba($color : $text-color, $alpha: 0.16);
 		font-weight: 300;
-	}
-	input{
 		padding: 8px 10px;
+	}
+	input[type=color]{
+		width: 100%;
+		border-radius: $border-radius;
 	}
 	label{
 		display: inline-block;
@@ -476,6 +477,17 @@ html{
 		width: 400px;
 		border: $border-bottom;
 		border-radius: $border-radius;
+	}
+	.box-button{
+		justify-content: space-around;
+		gap: 0;
+		.btn{
+			padding: 8px;
+		}
+	}
+	.btn-delete{
+		display: none;
+		@include button($danger-color,$white ,none )
 	}
 }
 
@@ -797,4 +809,37 @@ html{
 		left: 0;
 		width: 100%;
 	}
+}
+
+
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
+}
+
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+  background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+  background-color: #87adbd !important;
+}
+
+.colored-toast .swal2-title {
+  color: white;
+}
+
+.colored-toast .swal2-close {
+  color: white;
+}
+
+.colored-toast .swal2-html-container {
+  color: white;
 }

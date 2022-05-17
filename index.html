@@ -112,7 +112,7 @@
 						<div class="calendar" id="calendar"></div>
 						<div class="box-formcalendar">
 							<form class="formCalendar">
-								<input type="text" name="idEvent" id="idEvent">
+								<input type="hidden" name="idEvent" id="idEvent">
 								<div class="container">
 									<h3 class="title-box my text-center">
 										Agregar evento
@@ -134,7 +134,8 @@
 									</div>
 									<div class="row">
 										<div class="box-button">
-											<button class="btn btn-guardar" type="submit">Guardar</button>
+											<button class="btn btn-guardar" data-accion="" type="submit">Guardar</button>
+											<button class="btn btn-delete" type="button">Eliminar</button>
 											<button class="btn btn-reset" type="reset">Desechar</button>
 										</div>
 									</div>

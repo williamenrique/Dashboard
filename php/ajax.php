@@ -5,29 +5,14 @@ if($_POST){
 	$txtInicio = $_POST['txtInicio'];
 	$txtColor = $_POST['txtColor'];
 	$datajson = (!file_exists('database.json') ? [] : json_decode(file_get_contents('database.json')));
-	// foreach ($events as $element) {
-	// 	if ($last == $element) 
-	// 			$element['id'];
-	// }
-	//TODO: verificar la cantidad de registros si es mayor a 0 obtener el ultimo registro y sumarle 1 al nuevo antes de ingresarlo
-	// if()
+
 	$writable = fopen('database.json','w');
-
-	// $data = file_get_contents("database.json");
-	// $events = json_decode($data, true);
-	// $last = end($events);
-
-	// foreach ($events as $element) {
-	// 	if ($last == $element) 
-	// 			$element['id'];
-	// }
-
 
 	array_push($datajson, [
 		'id' => $count,
 		'title' => $txtTituloEvento,
 		'start' => $txtInicio,
-		'color' => $txtColor,
+		'color' => $txtColor
 	]);
 	$arrResponse = [
 		'message' => "Datos cargados", 'status' => true
