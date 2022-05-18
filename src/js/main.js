@@ -14,7 +14,7 @@ show.addEventListener('click', () => {
 		let saveNav = localStorage.setItem('nav', 'false')
 	}
 })
-// acceder al elemto local
+// acceder al elemto localstore
 if (localStorage.getItem("nav") === 'true') {
 	section_nav.classList.add('nav-active')
 	main.classList.add('nav-active')
@@ -74,6 +74,7 @@ let date = new Date().toDateString();
 document.querySelector('.time').innerHTML = hora
 document.querySelector('.date').innerHTML = date
 
-
+// console.log('hoy es '+hoy)
+console.log();
 
 

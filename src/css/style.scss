@@ -127,6 +127,7 @@ html{
 		font-weight: 300;
 		padding: 8px 10px;
 	}
+
 	input[type=color]{
 		width: 100%;
 		border-radius: $border-radius;
@@ -137,12 +138,19 @@ html{
 		margin-bottom: 5px;
 		text-transform: capitalize;
 	}
+	input[type=color]{
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		cursor: pointer;
+	}
 	select{
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		padding: 8px 10px;
 		position: relative;
+		cursor: pointer;
 	}
 }
 // check cuadrado 

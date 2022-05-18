@@ -109,12 +109,20 @@ html {
   text-transform: capitalize;
 }
 
+.box-input input[type=color] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
 .box-input select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: 8px 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .box-check {

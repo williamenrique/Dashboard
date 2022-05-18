@@ -2,7 +2,8 @@
  * calendario
  ********************************/
 document.addEventListener('DOMContentLoaded', function () {
-	// fecthData()
+	document.querySelector('#txtInicio').value = hoy.toISOString().split('T')[0]
+	document.querySelector('#txtFin').value = hoy.toISOString().split('T')[0]
 	let formCalendar = document.querySelector('.formCalendar')
 	let calendarEl = document.getElementById('calendar')
 	let calendar = new FullCalendar.Calendar(calendarEl, {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		events: 'php/listar.php',
 		editable: true,
 		dateClick: function (info) {
+			// console.log(info)
 			// formCalendar.reset()
 			document.querySelector('#idEvent').value = ''
 			let txtTituloEvento = document.querySelector('#txtTituloEvento')
@@ -34,130 +36,135 @@ document.addEventListener('DOMContentLoaded', function () {
 			document.querySelector('.btn-delete').style.display = 'none'
 		},
 		eventClick: function (info) {
-			formCalendar.reset()
-			let title_box = document.querySelector('.title-box').textContent = 'Editar evento'
+			// console.log(info.event.endStr)
+			// formClean()
+			document.querySelector('.title-box').textContent = 'Editar evento'
 			document.querySelector('#idEvent').value = info.event.id
 			document.querySelector('.btn-guardar').textContent = 'Editar'
 			document.querySelector('.btn-delete').style.display = 'block'
 			document.querySelector('#txtTituloEvento').value = info.event.title
 			document.querySelector('#txtInicio').value = info.event.startStr
+			document.querySelector('#txtFin').value = info.event.endStr
 			document.querySelector('#txtColor').value = info.event.backgroundColor
 		},
 		eventDrop: function (info) {
+			// console.log(info)
 			const idEvent = info.event.id
 			const start = info.event.startStr
+			const end = info.event.endtStr
 			const formdata = new FormData()
 			formdata.append('accion','drop')
 			formdata.append('idEvent',idEvent)
 			formdata.append('start',start)
+			formdata.append('end',end)
 			fetch('php/dataEvents.php', {
 				method: 'POST',
 				body: formdata,
 			})
-			.then(function (response) {
+			.then( (response) => {
 				return response.json()
 			})
-			.then(function (data) {
+			.then( (data) => {
 				// console.log(data)
 				if (data.status) {
-					Toast.fire({
-						icon: 'success',
-						title: data.message
-					})
-					// fecthData()
+					notifi(data.message,'success')
 					calendar.refetchEvents()
-					formCalendar.reset()
-				}else {
-					Toast.fire({
-						icon: 'success',
-						title: data.message
-					})
+					formClean()
+				} else {
+					notifi(data.message,'error')
 				}
 			})
-			.catch(function (err) {
+			.catch( (err) => {
 				console.log(err)
 			})
 		}
 	})
 	calendar.render()
-
+	/**********************************************
+	 * // funcion para eliminar un evento
+	 *********************************************/
 	if (document.querySelector('.btn-delete')) {
 		document.querySelector('.btn-delete').addEventListener('click', () => {
-			let txtTituloEvento = document.querySelector('#txtTituloEvento').value
-			let txtInicio = document.querySelector('#txtInicio').value
-			let txtColor = document.querySelector('#txtColor').value
-			let idEvent = document.querySelector('#idEvent').value
+			// let txtTituloEvento = document.querySelector('#txtTituloEvento').value
+			// let txtInicio = document.querySelector('#txtInicio').value
+			// let txtColor = document.querySelector('#txtColor').value
+			// let idEvent = document.querySelector('#idEvent').value
 			const formdata = new FormData(formCalendar);
 			formdata.append('accion','delete');
 			fetch('php/dataEvents.php', {
 				method: 'POST',
 				body: formdata,
 			})
-			.then(function (response) {
+			.then((response) => {
 				return response.json()
 			})
-			.then(function (data) {
+			.then((data) => {
 				// console.log(data)
 				if (data.status) {
-					Toast.fire({
-						icon: 'success',
-						title: data.message
-					})
-					// fecthData()
+					notifi(data.message, 'success')
+					// document.querySelector('.btn-guardar').textContent = 'guardar'
+					// document.querySelector('.btn-delete').style.display = 'none'
 					calendar.refetchEvents()
-					formCalendar.reset()
+					formClean()
 				} else {
-					Toast.fire({
-						icon: 'success',
-						title: data.message
-					})
+					notifi(data.message,'error')
 				}
 			})
-			.catch(function (err) {
+			.catch((err) => {
 				console.log(err)
 			})
 		})
 	}
-	formCalendar.addEventListener('submit', function (e) {
+		/**********************************************
+	 * // funcion para crear un evento
+	 *********************************************/
+	formCalendar.addEventListener('submit', (e) => {
 		e.preventDefault()
-		let txtTituloEvento = document.querySelector('#txtTituloEvento').value
-		let txtInicio = document.querySelector('#txtInicio').value
-		let txtColor = document.querySelector('#txtColor').value
+		let txtTituloEvento = document.querySelector('#txtTituloEvento')
+		// let txtInicio = document.querySelector('#txtInicio')
+		// let txtColor = document.querySelector('#txtColor')
 	
 		const formdata = new FormData(formCalendar)
-		formdata.append('accion','agregar')
+		formdata.append('accion','event')
 		fetch('php/dataEvents.php', {
 			method: 'POST',
 			body: formdata,
 		})
-			.then(function (response) {
+			.then((response) => {
 				return response.json()
 			})
-			.then(function (data) {
-				// console.log(data)
+			.then((data) => {
 				if (data.status) {
-					Toast.fire({
-						icon: 'success',
-						title: data.message
-					})
-					// fecthData()
+					notifi(data.message,'success')
 					calendar.refetchEvents()
-					formCalendar.reset()
-				}else {
-					Toast.fire({
-						icon: 'success',
-						title: data.message
-					})
+					formClean()
+				} else {
+					notifi(data.message, 'error')
+					txtTituloEvento.focus()
 				}
 			})
-			.catch(function (err) {
+			.catch((err) => {
 				console.log(err)
 			})
 	})
 })
 
 
-
+	/**********************************************
+	 * limpiar form
+	 *********************************************/
+const formClean = () => {
+	document.querySelector('#txtInicio').value = hoy.toISOString().split('T')[0]
+	document.querySelector('#txtFin').value = hoy.toISOString().split('T')[0]
+	document.querySelector('.title-box').textContent = 'Agregar Evento'
+	document.querySelector('#txtTituloEvento').value = ''
+	document.querySelector('#txtColor').value = '#283046'
+	document.querySelector('.btn-guardar').textContent = 'Agregar'
+	document.querySelector('.btn-delete').style.display = 'none'
+}
+	/**********************************************
+	 * // notificacion
+	 *********************************************/
 const Toast = Swal.mixin({
   toast: true,
   position: 'top-right',
@@ -169,21 +176,11 @@ const Toast = Swal.mixin({
   timer: 1500,
   timerProgressBar: true
 })
-Toast.fire({
-  icon: 'success',
-  title: 'Success'
-})
 
-// funcion traer datos
-function fecthData() {
-	fetch('php/database.json')
-	// fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-	// retornar el valor
-		.then((res) => res.json())
-		.then((data) => {
-			// pasamos los datos a la funcion donde se muestra la imagen
-			// funcion creada mas abajo
-			let txtInicio = document.querySelector('#txtInicio')
-			// console.log(data)
-		})
+
+const notifi = (title,icon) => {
+	Toast.fire({
+		icon: icon,
+		title: title
+	})
 }
