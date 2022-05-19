@@ -1,16 +1,23 @@
 
-// if (document.querySelector('.btn-subir')) {
-	// 	let search = document.querySelector('.search')
-	// 	search.addEventListener('click', () => {
-		// 		// document.querySelector('#file').click()
-		// 		// file.value = ""
-		// 		// createClearFormData()
-		// 	})
-		// }
+// let file = document.querySelector('#file')
 let formDataFiles = new FormData()
 let uploadFile = document.querySelector('#uploadFile')
 let upFiles = document.querySelector('.btn-subir-archivo')
-uploadFile.addEventListener('change', () => {
+upFiles.disabled = true
+if (document.querySelector('.search')) {
+	let search = document.querySelector('.btn-searchFiles')
+	search.addEventListener('click', () => {
+		document.querySelector('#uploadFile').click()
+		uploadFile.value = ""
+		createClearFormDataFiles()
+	})
+}
+uploadFile.addEventListener('change', (e) => {
+	if (uploadFile === "") {
+		upFiles.disabled = true
+	} else {
+		upFiles.disabled = false
+	}
 	// console.log(uploadFile)
 	// recorrer multiples archivos
 	for (let i = 0; i < uploadFile.files.length; i++) {
@@ -23,7 +30,7 @@ uploadFile.addEventListener('change', () => {
 		formDataFiles.append(fileThumbnail_id,uploadFile.files[i])
 	}
 	// limpiar el input file
-	e.target.value = ''
+	// e.target.value = 'ggggggg'
 })
 
 upFiles.addEventListener('click', () => {
@@ -35,6 +42,8 @@ upFiles.addEventListener('click', () => {
 		return response.json()
 	})
 	.then(function (data) {
+		createClearFormDataFiles()
+		upFiles.disabled = true
 		console.log(data)
 	})
 	.catch(function (err) {
@@ -63,10 +72,23 @@ const createCloseFile = (fileThumbnail_id) => {
 	// despues de crear la funcion para cerrar
 	document.getElementsByClassName(fileThumbnail_id)[0].appendChild(closeButtonFile)
 }
+
+// funcion para limpiar el formdata y ficheros
+const createClearFormDataFiles = () => {
+	// formdata es un array se recorre
+	for (let key of formDataFiles.keys()) {
+		formDataFiles.delete(key)
+	}
+	// hacer un barrido con foreach de los thumbnail en el dom
+	document.querySelectorAll('.thumbnailFile').forEach(function (thumbnailFile) {
+		thumbnailFile.remove()
+	})
+}
 // remover el fileThumbnail
 document.body.addEventListener('click', function (e) {
 	if ( e.target.classList.contains('close-button-file') ) {
 		e.target.parentNode.remove();
 		formDataFiles.delete(e.target.parentNode.dataset.id)
+		e.target.value = ''
 	}
 })

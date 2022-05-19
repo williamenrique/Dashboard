@@ -1,0 +1,16 @@
+[
+	{
+		"id": 1,
+		"title": "Nuevo evento",
+		"start": "2022-05-19",
+		"end": "2022-05-19",
+		"color": "#073bca"
+	},
+	{
+		"id": 2,
+		"title": "Segundo evento",
+		"start": "2022-05-27",
+		"end": "undefined",
+		"color": "#08a10d"
+	}
+]

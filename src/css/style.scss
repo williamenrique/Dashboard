@@ -74,6 +74,12 @@ html{
 	// max-width: 120px;
 	border-radius: $border-radius;
 	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	i{
+		font-size: 16px;
+	}
 	cursor: pointer;
 	&:hover{
 		box-shadow: 0px 1px 18px 0px rgba($color : $dark-color, $alpha: 0.76);
@@ -877,7 +883,7 @@ html{
 		display: flex;
 		justify-content: flex-end;
 		gap: 20px;
-		#uploarFile{
+		#uploadFile{
 			display: none;
 		}
 	}

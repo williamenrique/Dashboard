@@ -33,7 +33,14 @@ html {
   text-align: center;
   border-radius: 6px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
+}
+
+.btn i {
+  font-size: 16px;
 }
 
 .btn:hover {
@@ -1016,7 +1023,7 @@ html {
   gap: 20px;
 }
 
-.box-files .box-files-upload #uploarFile {
+.box-files .box-files-upload #uploadFile {
   display: none;
 }
 
