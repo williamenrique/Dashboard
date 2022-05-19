@@ -1,5 +1,5 @@
 <?php
-	$datajson = (!file_exists('database.json') ? [] : json_decode(file_get_contents('database.json')));
+	$datajson = (!file_exists('../json/database.json') ? [] : json_decode(file_get_contents('../json/database.json')));
 	echo json_encode($datajson, JSON_UNESCAPED_UNICODE);
 
 	// $data = file_get_contents("database.json");

@@ -14,10 +14,10 @@ switch ($_REQUEST['accion']) {
 			// si el id llega en vacio quiere decir que se esta creando un nuevo evento
 			if($idEvent == ''){
 				// se verifica si el archivo existe si no se crea  por primera vez
-				if(!file_exists('database.json')){
+				if(!file_exists('../json/database.json')){
 					// cargamos el documento si no existe se crea 
-					$datajson = (!file_exists('database.json') ? [] : json_decode(file_get_contents('database.json')));
-					$writable = fopen('database.json','w');
+					$datajson = (!file_exists('../json/database.json') ? [] : json_decode(file_get_contents('../json/database.json')));
+					$writable = fopen('../json/database.json','w');
 					// se le agregan los datos recibidos
 					array_push($datajson, [
 						'id' => 1,
@@ -30,8 +30,8 @@ switch ($_REQUEST['accion']) {
 					fwrite($writable,json_encode($datajson));
 					fclose($writable);
 					// si ya existe un archivo se sobreescribe
-				}else if(file_exists('database.json')){
-					$data = file_get_contents("database.json");
+				}else if(file_exists('../json/database.json')){
+					$data = file_get_contents("../json/database.json");
 					$events = json_decode($data, true);
 					// secuenta y se obtiene el ultimo registro para sumarle 1
 					$last = end($events);
@@ -40,7 +40,7 @@ switch ($_REQUEST['accion']) {
 							$lastRegister =  $element['id'] + 1;
 					}
 					// se sobre escribe el JSON con la nueva data
-					$writable = fopen('database.json','w');
+					$writable = fopen('../json/database.json','w');
 					array_push($events, [
 						'id' => $lastRegister,
 						'title' => $txtTituloEvento,
@@ -57,7 +57,7 @@ switch ($_REQUEST['accion']) {
 				if($txtTituloEvento == ''){
 					$arrResponse = ['message' => "Titulo no debe estar vacio", 'status' => false];
 				}else{
-					$data = file_get_contents("database.json");
+					$data = file_get_contents("../json/database.json");
 					$events = json_decode($data, true);
 					foreach ($events as $key => $entry) {
 						if ($entry['id'] == $idEvent) {
@@ -68,7 +68,7 @@ switch ($_REQUEST['accion']) {
 						}
 					}
 					$newJsonString = json_encode($events);
-					file_put_contents('database.json', $newJsonString);
+					file_put_contents('../json/database.json', $newJsonString);
 					$arrResponse = ['message' => "Evento actualizado", 'status' => true];
 				}
 			}
@@ -81,7 +81,7 @@ switch ($_REQUEST['accion']) {
 		// $txtInicio = $_POST['txtInicio'];
 		// $txtColor = $_POST['txtColor'];
 		$idEvent = $_POST['idEvent'];
-		$data = file_get_contents('database.json');
+		$data = file_get_contents('../json/database.json');
 		// decode json to associative array
 		$json_arr = json_decode($data, true);
 		// get array index to delete
@@ -98,7 +98,7 @@ switch ($_REQUEST['accion']) {
 		// rebase array
 		$json_arr = array_values($json_arr);
 		// encode array to json and save to file
-		file_put_contents('database.json', json_encode($json_arr));
+		file_put_contents('../json/database.json', json_encode($json_arr));
 		$arrResponse = ['message' => "Evento eliminado", 'status' => true];
 		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		break;
@@ -107,7 +107,7 @@ switch ($_REQUEST['accion']) {
 			$txtInicio = $_POST['start'];
 			$txtEnd = $_POST['end'];
 			$idEvent = $_POST['idEvent'];
-			$data = file_get_contents("database.json");
+			$data = file_get_contents("../json/database.json");
 			$events = json_decode($data, true);
 			foreach ($events as $key => $entry) {
 				if ($entry['id'] == $idEvent) {
@@ -116,7 +116,7 @@ switch ($_REQUEST['accion']) {
 				}
 			}
 			$newJsonString = json_encode($events);
-			file_put_contents('database.json', $newJsonString);
+			file_put_contents('../json/database.json', $newJsonString);
 			$arrResponse = ['message' => "Evento cambiado", 'status' => true];
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 			break;

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			center: 'title',
 			right: 'dayGridMonth, timeGridWeek, listWeek'
 		},
-		events: 'php/listar.php',
+		events: 'php/listarEvents.php',
 		editable: true,
 		dateClick: function (info) {
 			// console.log(info)

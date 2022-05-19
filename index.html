@@ -105,9 +105,50 @@
 				</div>
 			</section>
 			<!-- navegacion lateral end -->
+			<!-- barra lateral para subir un archivo -->
+			<!-- <div class="box-lat-upload">
+				<div class="box-head">
+					<h4>seleccione </h4>
+				</div>
+			</div> -->
+			<!-- end barra lateral para subir un archivo -->
 			<!-- contenido principal -->
 			<div class="main my">
 				<div class="container">
+					<!-- tabla de ficheros -->
+					<section class="box box-files">
+						<div class="container">
+							<div class="head-box">
+								<h3>Administrador de archivos</h3>
+								<h4>Lugar donde gusrdar archivos importantes para su uso posterior</h4>
+							</div>
+							<div class="row">
+								<div class="box-input box-input-search">
+									<input type="text">
+									<i class='bx bx-search'></i>
+								</div>
+								<form class="formFile">
+									<div class="box-files-upload ">
+										<button type="button" class="btn btn-newFolder">
+											<i class='bx bxs-folder-plus'></i>
+											Nueva carpeta
+										</button>
+										<input type="file" id="uploadFile" name="uploadFile[]" multiple>
+										<button type="button" class="btn btn-subir-archivo">
+											<i class='bx bx-upload'></i>
+											Subir archivo
+										</button>
+									</div>
+								</form>
+							</div>
+							<div id="box-preview-file"></div>
+						</div>
+
+					</section>
+
+					<!-- end tabla de ficheros -->
+					<span class="divider-dotted"></span>
+					<!-- calendario -->
 					<div class="box-calendar">
 						<div class="calendar" id="calendar"></div>
 						<div class="box-formcalendar">
@@ -456,6 +497,7 @@
 					</section>
 					<!-- end tabla de contenido con despliegue -->
 					<span class="divider-dotted"></span>
+
 				</div>
 			</div>
 			<!-- end contenido principal -->
@@ -470,6 +512,7 @@
 		<script src="./src/js/contOculto.js"></script>
 		<script src="./src/js/subirImg.js"></script>
 		<script src="./src/js/calendar.js"></script>
+		<script src="./src/js/uploadFiles.js"></script>
 	</body>
 
 </html>

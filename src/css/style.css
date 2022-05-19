@@ -31,7 +31,6 @@ html {
   color: #fff;
   padding: 8px;
   text-align: center;
-  max-width: 120px;
   border-radius: 6px;
   text-transform: uppercase;
   cursor: pointer;
@@ -948,7 +947,7 @@ html {
   display: flex;
   justify-content: flex-end;
   border-radius: 10px;
-  color: #AFB2B9;
+  color: #283046;
 }
 
 .tableCount .body-data .box-pagination .pagination li {
@@ -960,23 +959,103 @@ html {
 
 .tableCount .body-data .box-pagination .pagination li.active {
   z-index: 3;
-  background-color: #7367F0;
+  background-color: #6f6df4;
   color: #fff;
   border-radius: 100px;
   font-weight: 600;
 }
 
 .tableCount .body-data .box-pagination .pagination li.active a {
-  color: #FFF;
+  color: #fff;
 }
 
 .tableCount .body-data .box-pagination .pagination li a {
-  color: #AFB2B9;
+  color: #283046;
   text-decoration: none;
 }
 
 .tableCount .body-data .box-pagination .pagination li a:hover {
   color: #fff;
+}
+
+.box-files .head-box {
+  margin-bottom: 20px;
+}
+
+.box-files .head-box h3 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.box-files .head-box h4 {
+  color: #3699FF;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.box-files .box-input-search {
+  width: 50%;
+  position: relative;
+}
+
+.box-files .box-input-search i {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.box-files .box-input-search input {
+  padding-left: 30px;
+}
+
+.box-files .box-files-upload {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.box-files .box-files-upload #uploarFile {
+  display: none;
+}
+
+.box-files #box-preview-file {
+  border: 1px dotted;
+  width: 100%;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 5px 10px 5px;
+}
+
+.box-files #box-preview-file span {
+  display: flex;
+  align-items: flex-end;
+  font-size: 12px;
+}
+
+.box-files #box-preview-file span i {
+  margin-left: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.box-files #box-preview-file span i:hover {
+  color: #6f6df4;
+}
+
+.box-lat-upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100vh;
+  background: #283046;
+  border-radius: 4px 0 0 4px;
+  z-index: 1;
 }
 
 /*********************************

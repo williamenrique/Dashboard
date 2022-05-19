@@ -68,7 +68,7 @@ btnUpImg.addEventListener('click', () => {
 	
 	const formdata = new FormData(formImg)
 		formdata.append('accion','event')
-		fetch('php/controlImg.php', {
+		fetch('php/dataImg.php', {
 			method: 'POST',
 			body: formdata,
 		})

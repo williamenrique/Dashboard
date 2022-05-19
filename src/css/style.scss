@@ -71,7 +71,7 @@ html{
 	color: $white;
 	padding: 8px ;
 	text-align: center;
-	max-width: 120px;
+	// max-width: 120px;
 	border-radius: $border-radius;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -815,10 +815,8 @@ html{
 			.pagination{
 				display: flex;
 				justify-content: flex-end;
-				// padding: 0 .5rem ;
-				// background: #242B3D;
 				border-radius: 10px;
-				color: #AFB2B9;
+				color: $dark-color-ligth;
 				li{
 					list-style: none;
 					padding: 5px 10px;
@@ -826,16 +824,16 @@ html{
 					cursor: pointer;
 					&.active{
 						z-index: 3;
-						background-color: #7367F0;
-						color: #fff;
+						background-color: $primary-color;
+						color: $white;
 						border-radius: 100px;
 						font-weight: 600;
 						a{
-							color: #FFF;
+							color: $white;
 						}
 					}
 					a{
-						color: #AFB2B9;
+						color: $dark-color-ligth;
 						text-decoration: none;
 						&:hover{
 							color: $white;
@@ -845,6 +843,79 @@ html{
 			}
 		}
 	}
+}
+
+
+.box-files{
+	.head-box{
+		margin-bottom: 20px;
+		h3{
+			font-size: 30px;
+			font-weight: 300;
+		}
+		h4{
+			color: $purple-color;
+			font-weight: 300;
+			font-size: 12px;
+		}
+	}
+	.box-input-search{
+		width: 50%;
+		position: relative;
+		i{
+			position: absolute;
+			top: 10px;
+			left: 5px;
+			font-size: 20px;
+			font-weight: bolder;
+		}
+		input{
+			padding-left: 30px;
+		}
+	}
+	.box-files-upload{
+		display: flex;
+		justify-content: flex-end;
+		gap: 20px;
+		#uploarFile{
+			display: none;
+		}
+	}
+	#box-preview-file{
+		border: 1px dotted;
+		width: 100%;
+		border-radius: $border-radius;
+    display: flex;
+		flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 5px 10px 5px;
+		span{
+			display: flex;
+			align-items: flex-end;
+			font-size: 12px;
+			i{
+				margin-left: 10px;
+				font-size: 18px;
+				cursor: pointer;
+				&:hover{
+					color: $primary-color;
+				}
+			}
+		}
+	}
+}
+
+.box-lat-upload{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200px;
+	height: 100vh;
+	background: $dark-color-ligth;
+	border-radius: 4px 0 0 4px;
+	z-index: 1;
+	
 }
 
 
