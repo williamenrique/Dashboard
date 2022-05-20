@@ -14,10 +14,13 @@ if(!$_FILES == null){
 			$arrResponse = ["status" => false, "message" => "No fue posible subir"];
 		}
 		// cada vez que itera agregamos un elemnto ala rray
+		$fileSize = round($file['size'] / 1048576, 2);
 		array_push($data, 
 		[
 			'id' => $key,
-			'file_name' => $file['name']
+			'file_name' => $file['name'],
+			'file_size' => $fileSize.'MB',
+			'file_date_mod' => formatear_fecha(date('d-m-Y'))
 		]);
 		// se incrementa para poder usarlo para enviar un msj de exito
 		$cont ++;

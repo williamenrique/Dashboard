@@ -1,4 +1,7 @@
-
+let tableFiles
+document.addEventListener('DOMContentLoaded', function () {
+	getTableFiles()
+}, false)
 // let file = document.querySelector('#file')
 let formDataFiles = new FormData()
 let uploadFile = document.querySelector('#uploadFile')
@@ -45,6 +48,8 @@ upFiles.addEventListener('click', () => {
 		createClearFormDataFiles()
 		upFiles.disabled = true
 		console.log(data)
+		let tableFiles = $('#tableFiles').DataTable()
+		tableFiles.ajax.reload()
 	})
 	.catch(function (err) {
 		console.log(err)
@@ -92,3 +97,32 @@ document.body.addEventListener('click', function (e) {
 		e.target.value = ''
 	}
 })
+
+/* Cargamos la tabla con los archivos */
+const getTableFiles = () => {
+	tableFiles = $('#tableFiles').DataTable( {
+		responsive: true,
+		"language": {
+			"sLengthMenu": "Mostrar _MENU_",
+			"sZeroRecords": "No se encontraron resultados",
+			"sEmptyTable": "Ningún dato disponible",
+			"sInfo": "Total de _TOTAL_ Registros"
+		},
+	"responsive": {
+		"name": "medium",
+		"width": "800"
+	},
+	"ajax": {
+		"url": 'php/listDataTable.php',
+		"dataSrc": ''
+	},
+	"columns": [
+		{ 'data': 'file_name'},
+		{ 'data': 'file_size'},
+		{ 'data': 'file_date_mod'}
+	],
+	"bDestroy": true,
+	"iDisplayLength": 10,
+	"order": [[0, "asc"]]
+	} )
+}

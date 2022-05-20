@@ -8,7 +8,12 @@
 		<title>Dashboard Dark</title>
 		<link rel="shortcut icon" href="./src/images/favicon.ico">
 		<link rel="stylesheet" href="./src/plugins/fullcalendar-5.11.0/main.min.css">
+		<link rel="stylesheet" href="./src/plugins/dataTable/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="./src/plugins/dataTable/datatables.min.css">
+		<link rel="stylesheet" href="./src/plugins/dataTable/responsive.dataTables.min.css">
+		<link rel="stylesheet" href="./src/plugins/sweetalert/sweetcolor.css">
 		<link rel="stylesheet" href="./src/css/style.css">
+		<link rel="stylesheet" href="./src/css/table.css">
 	</head>
 
 	<body>
@@ -105,43 +110,54 @@
 				</div>
 			</section>
 			<!-- navegacion lateral end -->
-			<!-- barra lateral para subir un archivo -->
-			<!-- <div class="box-lat-upload">
-				<div class="box-head">
-					<h4>seleccione </h4>
-				</div>
-			</div> -->
-			<!-- end barra lateral para subir un archivo -->
 			<!-- contenido principal -->
 			<div class="main my">
 				<div class="container">
 					<!-- tabla de ficheros -->
-					<section class="box box-files">
-						<div class="container">
-							<div class="head-box">
-								<h3>Administrador de archivos</h3>
-								<h4>Lugar donde gusrdar archivos importantes para su uso posterior</h4>
-							</div>
-							<div class="row">
-								<div class="box-input box-input-search">
-									<input type="text">
-									<i class='bx bx-search'></i>
+					<section class="box-files">
+						<div class="box">
+							<div class="container">
+								<div class="head-box">
+									<h3>Administrador de archivos</h3>
+									<h4>Lugar donde gusrdar archivos importantes para su uso posterior</h4>
 								</div>
-								<div class="box-files-upload ">
-									<button type="button" class="btn btn-searchFiles">
+								<div class="row">
+									<div class="box-input box-input-search">
+										<input type="text">
 										<i class='bx bx-search'></i>
-										Archivos
-									</button>
-									<input type="file" id="uploadFile" name="uploadFile[]" multiple>
-									<button type="button" class="btn btn-subir-archivo">
-										<i class='bx bx-upload'></i>
-										Subir archivo
-									</button>
+									</div>
+									<div class="box-files-upload ">
+										<button type="button" class="btn btn-searchFiles">
+											<i class='bx bx-search'></i>
+											Archivos
+										</button>
+										<input type="file" id="uploadFile" name="uploadFile[]" multiple>
+										<button type="button" class="btn btn-subir-archivo">
+											<i class='bx bx-upload'></i>
+											Subir archivo
+										</button>
+									</div>
 								</div>
-							</div>
-							<div id="box-preview-file"></div>
-						</div>
+								<div id="box-preview-file"></div>
 
+
+							</div>
+						</div>
+						<div class="box">
+							<div class="container">
+								<table id="tableFiles" class="display nowrap" style="width:100%">
+									<thead>
+										<tr>
+											<th>Nombre De archivo</th>
+											<th>Tamano</th>
+											<th>Fecha Modificacion</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</section>
 
 					<!-- end tabla de ficheros -->
@@ -506,15 +522,17 @@
 		</div>
 
 		<script src="./src/plugins/jquery/jquery-3.6.0.min.js"></script>
-		<!-- <script src="./src/plugins/fullcalendar-5.11.0/es.js"></script> -->
+		<script src="./src/plugins/dataTable/jquery.dataTables.min.js"></script>
+		<script src="./src/plugins/dataTable/datatables.min.js"></script>
+		<script src="./src/plugins/dataTable/dataTables.responsive.min.js"></script>
 		<script src="./src/plugins/fullcalendar-5.11.0/main.min.js"></script>
-		<script src="./src/plugins/moment/moment.js"></script>
-		<script src="./src/plugins/sweetalert/sweetalert2@11.js"></script>
-		<script src="./src/js/main.js"></script>
+		<script src="./src/plugins/fullcalendar-5.11.0/es.js"></script>
+		<script src="./src/plugins/sweetalert/sweetalert2@10.js"></script>
 		<script src="./src/js/contOculto.js"></script>
 		<script src="./src/js/subirImg.js"></script>
 		<script src="./src/js/calendar.js"></script>
 		<script src="./src/js/uploadFiles.js"></script>
+		<script src="./src/js/main.js"></script>
 	</body>
 
 </html>
