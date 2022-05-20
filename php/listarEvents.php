@@ -1,5 +1,6 @@
 <?php
-	$datajson = (!file_exists('../json/database.json') ? [] : json_decode(file_get_contents('../json/database.json')));
+include './config.php';
+	$datajson = (!file_exists(JSON_DATA_EVENTS) ? [] : json_decode(file_get_contents(JSON_DATA_EVENTS)));
 	echo json_encode($datajson, JSON_UNESCAPED_UNICODE);
 
 	// $data = file_get_contents("database.json");

@@ -1,7 +1,7 @@
 <?php
-$user = 'WILL-01';
+include './config.php';
 if(!$_FILES['file']['name'] == null){
-	if(!is_dir('../data/'.$user)) mkdir('../data/'.$user);
+	if(!is_dir('../data/'.USER)) mkdir('../data/'.USER);
 	$archivos_permitidos = ['jpeg', 'jpg', 'png', 'svg'];
 	$max_size = 2000000;
 	$fileData = pathinfo($_FILES['file']['name']);
@@ -12,14 +12,14 @@ if(!$_FILES['file']['name'] == null){
 		$arrResponse = ["status" => false, "message" => "Imagen demasiado grande"];
 	}else{
 		$idUser = 1;
-		$fileBase = '../data/'.$user.'/profile/';
+		$fileBase = '../data/'.USER.'/profile/';
 		$fileHash = substr(md5($fileBase . uniqid(microtime() . mt_rand())), 0, 8);
 		if (!file_exists($fileBase)) mkdir($fileBase, 0777, true);
 		$namFile = 'Profile-'. $fileHash . "." . $fileExtension;
 		$filePath = $fileBase . $namFile;
 		if(move_uploaded_file($_FILES['file']['tmp_name'], $filePath)){
-			$data = (!file_exists('../json/dataBaseImg.json') ? [] : json_decode(file_get_contents('../json/dataBaseImg.json')));
-			$writable = fopen('../json/dataBaseImg.json','w');
+			$data = (!file_exists(JSON_DATA_IMG) ? [] : json_decode(file_get_contents(JSON_DATA_IMG)));
+			$writable = fopen(JSON_DATA_IMG,'w');
 			// insertar en la base de datos o en el archivo JSON
 			$fileSize = round($_FILES['file']['size'] / 1048576, 2);
 			array_push($data , [
